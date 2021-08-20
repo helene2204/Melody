@@ -3,6 +3,16 @@ $(document).ready(function () {
   var counterUp=$(".counter-up"); //кнопка увеличения этажей
   var counterDown=$(".counter-down");//кнопка уменьшения этажей
   var floorPAth=$(".home-image path");//отдельный этаж в svg
+  var modal=$(".modal");
+  var modalCloseButton=$(".modal-close-button");
+  var viewFlatsButton=$(".view-flats");
+
+  function toggleModel() {//функция открытия-закрытия окна
+    modal.toggleClass("is-open")
+  };
+  floorPAth.on("click",toggleModel);
+  modalCloseButton.on("click",toggleModel);
+  viewFlatsButton.on("click",toggleModel);
 
   //функция при наведении на этаж
   floorPAth.on("mouseover",function(){
